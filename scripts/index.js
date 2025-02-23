@@ -5,7 +5,7 @@ import { createTag } from "./utils/createTag.js";
 import { deleteTag } from "./utils/deleteTag.js";
 import { counterRecipes } from "./utils/counterRecipes.js";
 import { clearButtonMainSearch } from "./utils/clearButtonMainSearch.js";
-import { handleSearchInput, ListenerSearchEvents } from "../utils/filterRecipes.js";
+import { handleSearchInput, ListenerSearchEvents } from "./utils/filterRecipes.js";
 import { FilterBySelectedItems } from "./utils/filterBySelectedItems.js";
 import { searchItems } from "./utils/searchItems.js";
 import { mylog } from "./params/handleConsoleLog.js";
