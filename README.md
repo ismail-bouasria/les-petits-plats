@@ -36,3 +36,5 @@ Ce projet consiste à développer une fonctionnalité de recherche performante p
 En cas de questions, se référer à :
 - **Sandra** (Cheffe de projet)
 - **Jean-Baptiste** (Lead Developer)
+
+- **Lien du site** https://ismail-bouasria.github.io/les-petits-plats/
