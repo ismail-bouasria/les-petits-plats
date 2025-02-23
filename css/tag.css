@@ -1,0 +1,23 @@
+.tag {
+    width: 155px;
+    height: 56px;
+    background-color: #FFD15B ;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.tagText {
+    /* dans le cas ou l'ingrédient est trop long*/
+    /* width: 155px; */
+    white-space: nowrap; /* Empêche le texte de s'étendre sur plusieurs lignes */
+    overflow: hidden; /* Cache le texte qui dépasse la largeur de l'élément */
+    text-overflow: ellipsis; /* Ajoute des points de suspension à la fin du texte tronqué */
+}
