@@ -1,15 +1,15 @@
 import Recipe from "../models/recipe.js";
 
 export async function createRecipeArticles(recipesData) {
-    const zoneCartes = document.querySelector('section.zoneCartes');
+    const zoneCartes = document.querySelector('div.zoneCartes');
 
-    // Vérifie que la section .zoneCartes est présente
+    // Vérifie que la div .zoneCartes est présente
     if (!zoneCartes) {
-        console.error('La section .zoneCartes est introuvable.');
+        console.error('La div .zoneCartes est introuvable.');
         return;
     }
 
-    // Vide la section avant de rajouter les articles
+    // Vide la div avant de rajouter les articles
     zoneCartes.innerHTML = '';
 
     // Parcours des données des recettes

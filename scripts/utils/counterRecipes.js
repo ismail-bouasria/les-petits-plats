@@ -6,7 +6,7 @@ export function counterRecipes() {
 
     const updateCount = () => {
         // Sélectionne tous les éléments <article>
-        const articles = document.querySelectorAll('section.zoneCartes article');
+        const articles = document.querySelectorAll('div.zoneCartes article');
         mylog('Articles trouvés :', articles); // Vérifie les articles trouvés
 
         // Compte le nombre d'articles
@@ -36,12 +36,12 @@ export function counterRecipes() {
 
     // Utilise MutationObserver pour surveiller les changements dans la zone des articles
     const observer = new MutationObserver(updateCount);
-    const targetNode = document.querySelector('section.zoneCartes');
+    const targetNode = document.querySelector('div.zoneCartes');
 
     if (targetNode) {
         observer.observe(targetNode, { childList: true, subtree: true });
     } else {
-        console.error('L\'élément <section> avec la classe "zoneCartes" est introuvable.');
+        console.error('L\'élément <div> avec la classe "zoneCartes" est introuvable.');
     }
 
     // fonction pour afficher un texte si pas de recettes trouvées
