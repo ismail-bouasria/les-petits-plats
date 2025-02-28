@@ -75,7 +75,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     gap : 49px;
-  margin: 0 0 200px 130px;
+    margin: 0 0 200px 130px;
 }
 
 .noResult {

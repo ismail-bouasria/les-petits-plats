@@ -12,65 +12,60 @@ export let filteredRecipes = [];
 // Fonction pour filtrer les recettes en fonction de la recherche
 function filterRecipes(recipes, query) {
     mylog("début filterRecipes", recipes);
-    
+
     // Désinfecter et normaliser la requête
     const sanitizedQuery = clearInput(query); // Désinfection
     const normalizedQuery = removeAccents(sanitizedQuery); // Suppression des accents
-    
+
     // Convertir la requête en mots, en gardant ceux de 3 caractères ou plus
     const queryWords = [];
     const words = normalizedQuery.toLowerCase().split(" ");
-    let i = 0;
-    while (i < words.length) {
+    
+    for (let i = 0; i < words.length; i++) {
         if (words[i].length >= 3) {
             queryWords.push(words[i]);
         }
-        i++;
     }
 
     // Filtrer les recettes
-    filteredRecipes = [];
-    let j = 0;
-    while (j < recipes.length) {
+    const filteredRecipes = [];
+
+    for (let j = 0; j < recipes.length; j++) {
         const recipe = recipes[j];
         const name = recipe.name ? removeAccents(recipe.name.toLowerCase()) : '';
         const description = recipe.description ? removeAccents(recipe.description.toLowerCase()) : '';
-        
+
         let ingredients = '';
-        let k = 0;
-        while (k < recipe.ingredients.length) {
+        for (let k = 0; k < recipe.ingredients.length; k++) {
             ingredients += removeAccents(recipe.ingredients[k].ingredient.toLowerCase()) + ' ';
-            k++;
         }
 
         const appliance = recipe.appliance ? removeAccents(recipe.appliance.toLowerCase()) : '';
-        
+
         let ustensils = '';
-        let l = 0;
-        while (l < recipe.ustensils.length) {
+        for (let l = 0; l < recipe.ustensils.length; l++) {
             ustensils += removeAccents(recipe.ustensils[l].toLowerCase()) + ' ';
-            l++;
         }
 
         let allWordsMatch = true;
-        let m = 0;
-        while (m < queryWords.length) {
+        for (let m = 0; m < queryWords.length; m++) {
             const word = queryWords[m];
             if (!(name.includes(word) || description.includes(word) ||
                 ingredients.includes(word) || appliance.includes(word) || ustensils.includes(word))) {
                 allWordsMatch = false;
                 break;
             }
-            m++;
         }
+
         if (allWordsMatch) {
             filteredRecipes.push(recipe);
         }
-        j++;
     }
+
     mylog("fin filterRecipes", filteredRecipes);
     return filteredRecipes;
 }
+
 
 // Fonction pour mettre à jour l'affichage des recettes et des listes
 export function updateRecipeDisplay(recipes) {
