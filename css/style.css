@@ -70,15 +70,12 @@ h1 {
     margin-bottom: 21px;  
 }
 
+
 .zoneCartes {
     display: flex;
     flex-wrap: wrap;
-    gap : 66px 20px;
-    justify-content: space-between;
-    margin-bottom: 200px;
-    margin-left: 100px;
-    margin-right: 100px;
-    /* max-width: 1440px; à activer si*/
+    gap : 49px;
+  margin: 0 0 200px 130px;
 }
 
 .noResult {
